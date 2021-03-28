@@ -1,0 +1,9 @@
+#compdef gernot
+#autoload
+
+_gernot () {
+    [ "${words[2]}" = "run" ] && compadd -- '-i' '-t' && return 0
+    [ "${words[2]}" = "images" ] && compadd -X 'Image command completions' - && return 0
+
+    compadd -X 'Gernot command completions' - run images && return 0
+}

@@ -1,0 +1,40 @@
+#!/usr/bin/env zsh
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -h|--help)
+    HELP="true"
+    shift
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+[ "$HELP" = "true" ] && echo "
+Usage:
+
+gernot.sh [Options] (run | images)
+
+Options:
+
+-i  Interactive | only available for run commands
+-t  Terminal    | only available for run commands
+"
+
+echo "DEBUG: ${POSITIONAL[@]}"
+
+[ "${POSITIONAL[1]}" = "run" ] && echo "
+Running!
+"
+
+[ "${POSITIONAL[1]}" = "images" ] && echo "
+Images!
+"
