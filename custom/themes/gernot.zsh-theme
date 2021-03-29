@@ -1,0 +1,1 @@
+/home/anon/opt/ohmyzsh-customs/themes/gernot.zsh-theme
