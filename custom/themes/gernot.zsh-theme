@@ -28,7 +28,7 @@ if [[ $terminfo[colors] -ge 256 ]]; then
     orange="%F{166}"
     grey="%F{240}"
     hotpink="%F{161}"
-    limegreen="%F{118}"
+    limegreen="%F{112}"
 else
     turquoise="%F{cyan}"
     orange="%F{yellow}"
